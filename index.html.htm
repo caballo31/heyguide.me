@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>heyGuide · Únete como creador</title>
+  <meta name="description" content="Empaqueta lo que sabes y empieza a monetizarlo."/>
+  <style>
+    :root{--accent:#EF4444}
+    html,body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Inter,Helvetica,Arial,"Apple Color Emoji","Segoe UI Emoji",sans-serif}
+    .no-scrollbar::-webkit-scrollbar{display:none}
+    .no-scrollbar{-ms-overflow-style:none;scrollbar-width:none}
+    .bg-blur-gradient{
+      background:
+        radial-gradient(60% 60% at 50% 0%, rgba(239,68,68,.08), transparent),
+        radial-gradient(40% 40% at 90% 10%, rgba(239,68,68,.05), transparent),
+        radial-gradient(30% 30% at 10% 90%, rgba(239,68,68,.04), transparent);
+    }
+    /* Animaciones sutiles */
+    .reveal{opacity:0; transform:translateY(16px); transition:opacity .6s ease, transform .6s ease}
+    .reveal.in{opacity:1; transform:none}
+    .hvr-raise{transition:transform .25s ease, box-shadow .25s ease}
+    .hvr-raise:hover{transform:translateY(-3px)}
+    /* Respeta "reduce motion" */
+    @media (prefers-reduced-motion: reduce){
+      .reveal{transition:none}
+      .hvr-raise{transition:none}
+    }
+  </style>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: { accent: "#EF4444", fog: "#f7f7f9" },
+          boxShadow: { card: "0 10px 30px rgba(0,0,0,.10)" }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-white text-gray-900 selection:bg-accent/10 selection:text-gray-900">
+
+  <!-- Header -->
+  <header class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-200">
+    <div class="mx-auto max-w-7xl px-6 flex items-center justify-between py-4">
+      <a href="#" class="font-semibold tracking-tight">heyGuide</a>
+      <nav class="hidden md:flex items-center gap-8 text-sm">
+        <a href="#beneficios" class="text-gray-600 hover:text-gray-900" data-i18n="nav.benefits">Beneficios</a>
+        <a href="#funciona" class="text-gray-600 hover:text-gray-900" data-i18n="nav.how">Cómo funciona</a>
+        <a href="#signup" class="text-gray-600 hover:text-gray-900" data-i18n="nav.join">Únete</a>
+      </nav>
+      <div class="flex items-center gap-3">
+        <button id="lang-toggle" class="text-sm text-gray-600 hover:text-gray-900 border border-gray-300 rounded-full px-3 py-1 hvr-raise">
+          EN
+        </button>
+        <a href="#signup" class="inline-flex items-center rounded-full bg-accent text-white px-4 py-2 text-sm font-semibold hover:opacity-90 hvr-raise" data-i18n="cta.join">
+          Únete a la lista →
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="relative bg-blur-gradient">
+    <div class="mx-auto max-w-7xl px-6 pt-20 md:pt-28 pb-10 grid lg:grid-cols-2 gap-10 items-start">
+      <!-- Texto -->
+      <div class="reveal in">
+        <h1 class="text-5xl md:text-7xl font-semibold leading-[1.05] tracking-tight" data-i18n="hero.headline">
+          Empaqueta lo que sabes y empieza a monetizarlo.
+        </h1>
+        <p class="mt-5 text-lg md:text-xl text-gray-700" data-i18n="hero.sub">
+          ¿Das clases, tours, recetas o compartes contenido? Transforma tu conocimiento en un producto digital simple y véndelo online a cualquier persona, en cualquier lugar.
+        </p>
+
+        <a href="https://example.com/form" target="_blank"
+           class="mt-7 inline-flex items-center rounded-full bg-accent text-white px-6 py-3 font-semibold hover:opacity-90 hvr-raise"
+           data-i18n="cta.joinBtn">
+          Unirme
+        </a>
+        <p class="mt-2 text-sm text-gray-500" data-i18n="hero.note">Tras enviar, 1 min de cuestionario.</p>
+      </div>
+
+      <!-- Visual -->
+      <div class="w-full reveal">
+        <!-- Super Card -->
+        <article class="relative w-full overflow-hidden rounded-3xl border border-gray-200 shadow-[0_10px_30px_rgba(0,0,0,.08)] hvr-raise">
+          <div class="relative w-full aspect-[16/12] sm:aspect-[16/10] md:aspect-[16/9]">
+            <img src="https://images.unsplash.com/photo-1528909514045-2fa4ac7a08ba?q=80&w=2000&auto=format&fit=crop"
+              alt="Classic Rome" class="absolute inset-0 h-full w-full object-cover"/>
+            <div class="pointer-events-none absolute inset-0 bg-[linear-gradient(to_top,rgba(0,0,0,.55),rgba(0,0,0,.15),transparent_55%)]"></div>
+            <div class="absolute bottom-0 left-0 right-0 p-5 md:p-6 text-white">
+              <p class="text-[11px] tracking-widest font-semibold opacity-90">SUPER COLLECTION</p>
+              <h3 class="mt-1 text-2xl md:text-3xl font-semibold">Classic Rome</h3>
+              <p class="mt-1 text-sm md:text-base opacity-90 flex items-center gap-3">
+                <span>📚 7 stories</span><span>🔓 Acceso total</span>
+              </p>
+            </div>
+          </div>
+        </article>
+
+        <!-- Mini Cards -->
+        <div class="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <a href="#signup" class="rounded-2xl border border-gray-200 bg-white overflow-hidden shadow-[0_6px_18px_rgba(0,0,0,.06)] hvr-raise">
+            <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=1600&auto=format&fit=crop"
+                 alt="Street food Napoli" class="h-36 w-full object-cover">
+            <div class="p-4">
+              <div class="flex items-center justify-between">
+                <p class="font-semibold truncate">Street food Napoli</p>
+                <span class="text-accent font-semibold">€5.90</span>
+              </div>
+              <p class="text-sm text-gray-500 mt-1">Gastro · 7 stories</p>
+            </div>
+          </a>
+
+          <a href="#signup" class="rounded-2xl border border-gray-200 bg-white overflow-hidden shadow-[0_6px_18px_rgba(0,0,0,.06)] hvr-raise">
+            <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=1600&auto=format&fit=crop"
+                 alt="Apps 10× rápido (AI+Bubble)" class="h-36 w-full object-cover">
+            <div class="p-4">
+              <div class="flex items-center justify-between">
+                <p class="font-semibold truncate">Apps 10× rápido (AI+Bubble)</p>
+                <span class="text-accent font-semibold">€9.90</span>
+              </div>
+              <p class="text-sm text-gray-500 mt-1">Productividad · 6 stories</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Beneficios -->
+  <section id="beneficios" class="bg-fog reveal">
+    <div class="mx-auto max-w-7xl px-6 py-16 md:py-20">
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="p-7 rounded-3xl bg-white border border-gray-200 hvr-raise">
+          <h3 class="text-lg font-semibold" data-i18n="benefit.1.title">💸 Gana dinero compartiendo lo que sabes</h3>
+          <p class="mt-2 text-gray-600" data-i18n="benefit.1.desc">Cobra cada vez que alguien desbloquee tu colección.</p>
+        </div>
+        <div class="p-7 rounded-3xl bg-white border border-gray-200 hvr-raise">
+          <h3 class="text-lg font-semibold" data-i18n="benefit.2.title">⚡ Stories fáciles, no cursos eternos</h3>
+          <p class="mt-2 text-gray-600" data-i18n="benefit.2.desc">Agrupa tus fotos, videos o notas en historias cortas y coherentes.</p>
+        </div>
+        <div class="p-7 rounded-3xl bg-white border border-gray-200 hvr-raise">
+          <h3 class="text-lg font-semibold" data-i18n="benefit.3.title">🌍 Comparte el link y cobra</h3>
+          <p class="mt-2 text-gray-600" data-i18n="benefit.3.desc">WhatsApp, Instagram, TikTok… sin intermediarios.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cómo funciona -->
+  <section id="funciona" class="bg-white reveal">
+    <div class="mx-auto max-w-7xl px-6 py-16 md:py-20">
+      <h2 class="text-3xl md:text-4xl font-semibold tracking-tight" data-i18n="how.title">Cómo funciona</h2>
+      <div class="grid md:grid-cols-3 gap-6 mt-8">
+        <div class="p-7 rounded-3xl bg-white border border-gray-200 hvr-raise">
+          <h3 class="font-semibold" data-i18n="how.1.title">1. Crea tu colección de stories</h3>
+          <p class="mt-2 text-gray-600" data-i18n="how.1.desc">Usa fotos, videos, notas o audios breves.</p>
+        </div>
+        <div class="p-7 rounded-3xl bg-white border border-gray-200 hvr-raise">
+          <h3 class="font-semibold" data-i18n="how.2.title">2. Pon tu precio</h3>
+          <p class="mt-2 text-gray-600" data-i18n="how.2.desc">Recomendado €3–10.</p>
+        </div>
+        <div class="p-7 rounded-3xl bg-white border border-gray-200 hvr-raise">
+          <h3 class="font-semibold" data-i18n="how.3.title">3. Comparte el link y cobra</h3>
+          <p class="mt-2 text-gray-600" data-i18n="how.3.desc">Cada cliente que lo desbloquee es ingreso extra.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA final -->
+  <section id="signup" class="bg-fog reveal">
+    <div class="mx-auto max-w-7xl px-6 py-20 md:py-24">
+      <div class="max-w-2xl">
+        <h2 class="text-4xl md:text-5xl font-semibold tracking-tight" data-i18n="cta.final.head">Empieza a ganar dinero hoy compartiendo lo que ya sabes.</h2>
+        <a href="https://example.com/form" target="_blank"
+           class="mt-6 inline-flex items-center rounded-full bg-accent text-white px-6 py-3 font-semibold hover:opacity-90 hvr-raise"
+           data-i18n="cta.final.btn">
+          Unirme
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="bg-white border-t border-gray-200 reveal">
+    <div class="mx-auto max-w-7xl px-6 py-8 flex flex-col md:flex-row items-center justify-between gap-4">
+      <p class="text-gray-500">© <span id="y"></span> heyGuide</p>
+      <a href="https://example.com/form" target="_blank" class="rounded-full bg-accent text-white px-4 py-2 text-sm font-semibold hover:opacity-90 hvr-raise" data-i18n="footer.join">Únete</a>
+    </div>
+  </footer>
+
+  <!-- Traducción + Interacciones -->
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+
+    const translations = {
+      en: {
+        "nav.benefits": "Benefits",
+        "nav.how": "How it works",
+        "nav.join": "Join",
+        "cta.join": "Join the waitlist →",
+        "hero.headline": "Package what you know and start monetizing it.",
+        "hero.sub": "Do you teach, guide tours, cook or create content? Turn your knowledge into a simple digital product and sell it online to anyone, anywhere.",
+        "hero.note": "After submitting, 1-minute questionnaire.",
+        "cta.joinBtn": "Join",
+        "benefit.1.title": "💸 Earn money sharing what you know",
+        "benefit.1.desc": "Get paid every time someone unlocks your collection.",
+        "benefit.2.title": "⚡ Easy stories, not endless courses",
+        "benefit.2.desc": "Group your photos, videos or notes into short, coherent stories.",
+        "benefit.3.title": "🌍 Share your link and get paid",
+        "benefit.3.desc": "WhatsApp, Instagram, TikTok… no middlemen.",
+        "how.title": "How it works",
+        "how.1.title": "1. Create your story collection",
+        "how.1.desc": "Use photos, videos, notes or short audios.",
+        "how.2.title": "2. Set your price",
+        "how.2.desc": "Recommended €3–10.",
+        "how.3.title": "3. Share your link and earn",
+        "how.3.desc": "Every client that unlocks it is extra income.",
+        "cta.final.head": "Start earning today by sharing what you already know.",
+        "cta.final.btn": "Join",
+        "footer.join": "Join"
+      },
+      es: {} // español por defecto
+    };
+
+    function setLang(lang){
+      document.querySelectorAll("[data-i18n]").forEach(el=>{
+        const key = el.getAttribute("data-i18n");
+        if(translations[lang] && translations[lang][key]){
+          el.textContent = translations[lang][key];
+        }
+      });
+    }
+
+    // Toggle idioma
+    const langBtn = document.getElementById("lang-toggle");
+    let current = "es";
+    langBtn.addEventListener("click", ()=>{
+      current = current === "es" ? "en" : "es";
+      setLang(current);
+      langBtn.textContent = current === "es" ? "EN" : "ES";
+    });
+
+    // Smooth scroll robusto (header y cualquier link interno)
+    document.querySelectorAll("a[href^='#']").forEach(link=>{
+      link.addEventListener("click", e=>{
+        const href = link.getAttribute("href");
+        const target = document.querySelector(href);
+        if(target){
+          e.preventDefault();
+          target.scrollIntoView({behavior:"smooth", block:"start"});
+        }
+      });
+    });
+
+    // Reveal on scroll
+    const io = new IntersectionObserver((entries)=>{
+      entries.forEach(ent=>{
+        if(ent.isIntersecting){
+          ent.target.classList.add('in');
+          io.unobserve(ent.target);
+        }
+      });
+    }, {threshold:.15});
+    document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+  </script>
+</body>
+</html>
