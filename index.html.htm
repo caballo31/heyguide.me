@@ -35,6 +35,9 @@
     .btn-primary:hover{opacity:.9}
     .btn-secondary{color:#111827;background:#fff;border:1px solid #e5e7eb;box-shadow:0 1px 2px rgba(0,0,0,.04)}
     .btn-secondary:hover{border-color:#d1d5db;box-shadow:0 2px 6px rgba(0,0,0,.06)}
+    /* Botón sutil (ghost) */
+    .btn-ghost{color:#374151;background:transparent;border:1px solid #e5e7eb}
+    .btn-ghost:hover{background:#f9fafb;border-color:#d1d5db}
 
     /* Invert on dark backgrounds */
     .on-dark{color:#fff}
@@ -156,8 +159,9 @@
         <select id="lang-select" class="lang hvr-raise">
           <option value="es">ES</option><option value="en">EN</option><option value="it">IT</option>
         </select>
-        <a href="#" data-join class="btn btn-primary hvr-raise" data-i18n="cta.join">
-          Únete a la lista →
+        <!-- Botón del header actualizado: más corto y sutil (ghost) -->
+        <a href="#" data-join class="btn btn-ghost hvr-raise" data-i18n="cta.joinShort">
+          Unirme
         </a>
       </div>
     </div>
@@ -446,7 +450,9 @@
         "meta.title":"heyGuide · Join as a creator",
         "meta.desc":"Package what you know and start monetizing it.",
         "nav.benefits":"Benefits","nav.how":"How it works","nav.join":"Join",
-        "cta.join":"Join the waitlist →","hero.headline":"Package what you know and start monetizing it.",
+        "cta.join":"Join the waitlist →",
+        "cta.joinShort":"Join",
+        "hero.headline":"Package what you know and start monetizing it.",
         "hero.sub":"Do you teach, guide tours, cook or create content? Turn your knowledge into a simple digital product and sell it online to anyone, anywhere.",
         "hero.note":"After submitting, 1-minute questionnaire.","cta.joinBtn":"Join",
         "benefit.1.title":"Earn money sharing what you know",
@@ -469,7 +475,9 @@
       },
       it: {
         "meta.title":"heyGuide · Unisciti come creator","meta.desc":"Confeziona ciò che sai e inizia a monetizzarlo.",
-        "nav.benefits":"Vantaggi","nav.how":"Come funziona","nav.join":"Unisciti","cta.join":"Unisciti alla lista d’attesa →",
+        "nav.benefits":"Vantaggi","nav.how":"Come funziona","nav.join":"Unisciti",
+        "cta.join":"Unisciti alla lista d’attesa →",
+        "cta.joinShort":"Uniscimi",
         "hero.headline":"Confeziona ciò che sai e inizia a monetizzarlo.",
         "hero.sub":"Fai lezioni, tour, ricette o crei contenuti? Trasforma le tue competenze in un semplice prodotto digitale e vendilo online a chiunque, ovunque.",
         "hero.note":"Dopo l’invio, questionario di 1 minuto.","cta.joinBtn":"Uniscimi",
@@ -493,7 +501,9 @@
       },
       es: {
         "meta.title":"heyGuide · Únete como creador","meta.desc":"Empaqueta lo que sabes y empieza a monetizarlo.",
-        "nav.benefits":"Beneficios","nav.how":"Cómo funciona","nav.join":"Únete","cta.join":"Únete a la lista →",
+        "nav.benefits":"Beneficios","nav.how":"Cómo funciona","nav.join":"Únete",
+        "cta.join":"Únete a la lista →",
+        "cta.joinShort":"Unirme",
         "hero.headline":"Empaqueta lo que sabes y empieza a monetizarlo.",
         "hero.sub":"¿Das clases, tours, recetas o compartes contenido? Transforma tu conocimiento en un producto digital simple y véndelo online a cualquier persona, en cualquier lugar.",
         "hero.note":"Tras enviar, 1 min de cuestionario.","cta.joinBtn":"Unirme",
@@ -615,5 +625,3 @@
   </script>
 </body>
 </html>
-
-
