@@ -230,18 +230,16 @@
       <!-- Media -->
       <div class="relative w-full aspect-video bg-black">
         <video id="demo-video"
-       class="absolute inset-0 h-full w-full object-cover"
-       controls playsinline preload="metadata"
-       poster="demo-preview.png?q=80&w=1600&auto=format&fit=crop">
-  <!-- MP4: misma URL que usabas cuando funcionaba -->
-  <source src="Demo.mp4" type="video/mp4">
-  <!-- Subtítulos: SOLO si están en el MISMO dominio o con CORS abierto -->
-  <track kind="captions" src="demo_en.vtt" srclang="en" label="English" default>
-  <track kind="captions" src="demo_es.vtt" srclang="es" label="Español">
-  <track kind="captions" src="demo_it.vtt" srclang="it" label="Italiano">
+               class="absolute inset-0 h-full w-full object-cover"
+               controls playsinline preload="metadata"
+               poster="demo-preview.png?q=80&w=1600&auto=format&fit=crop">
+          <source src="Demo.mp4" type="video/mp4">
 
-</video>
-
+          <!-- Subtítulos (sin default; selección por JS) -->
+          <track kind="captions" src="demo_en.vtt" srclang="en" label="English">
+          <track kind="captions" src="demo_es.vtt" srclang="es" label="Español">
+          <track kind="captions" src="demo_it.vtt" srclang="it" label="Italiano">
+        </video>
       </div>
 
       <!-- Contenido -->
@@ -405,39 +403,46 @@
       });
     });
 
-    // Modal
+    // --- Modal + subtítulos auto por idioma (un solo lugar de verdad)
     const demoModal=document.getElementById('demo-modal');
     const demoVideo=document.getElementById('demo-video');
+
+    const selectCaptions = () => {
+      const pageLang = (document.documentElement.lang || 'en').slice(0,2).toLowerCase();
+      const tracks = demoVideo.textTracks;
+      if (!tracks || !tracks.length) return;
+
+      // Desactiva todas las pistas para evitar dobles
+      for (let i = 0; i < tracks.length; i++) tracks[i].mode = 'disabled';
+
+      // Elige por idioma; fallback EN
+      let chosen = Array.from(tracks).find(t => (t.language || '').slice(0,2) === pageLang);
+      if (!chosen) chosen = Array.from(tracks).find(t => (t.language || '').slice(0,2) === 'en');
+
+      if (chosen) chosen.mode = 'showing';
+    };
+
     document.querySelectorAll('[data-open-demo]').forEach(el=>{
       el.addEventListener('click',()=>{
         demoModal.classList.remove('hidden');
-        window.dataLayer.push({event:'demo_open',lang:document.documentElement.lang||'en'});
-        // Activar subtítulos automáticamente
-        const tracks=demoVideo.textTracks;
-        if(tracks && tracks[0]) tracks[0].mode='showing';
+        window.dataLayer.push({event:'demo_open',lang:document.documentElement.lang || 'en'});
+
+        // Selección de subtítulos cuando haya metadata del video
+        if (demoVideo.readyState >= 1) {
+          selectCaptions();
+        } else {
+          demoVideo.addEventListener('loadedmetadata', selectCaptions, { once:true });
+        }
+
+        // Intento de reproducir (no forzamos si el navegador bloquea)
         demoVideo.play().catch(()=>{});
       });
     });
+
     const closeDemo=()=>{ demoModal.classList.add('hidden'); demoVideo.pause(); };
     document.getElementById('demo-close').addEventListener('click',closeDemo);
     demoModal.addEventListener('click',(e)=>{ if(e.target===demoModal) closeDemo(); });
     demoVideo.addEventListener('ended',()=>{ window.dataLayer.push({event:'demo_ended'}); });
-
-    demoVideo.addEventListener('loadedmetadata', () => {
-  const pageLang = (document.documentElement.lang || 'en').slice(0,2).toLowerCase();
-  const tracks = demoVideo.textTracks; // lista de TextTrack
-  if (!tracks || !tracks.length) return;
-
-  // Oculta todas
-  for (let i = 0; i < tracks.length; i++) tracks[i].mode = 'hidden';
-
-  // Activa la pista que coincida con lang (es/it/en). Fallback: en
-  let chosen = Array.from(tracks).find(t => t.language === pageLang);
-  if (!chosen) chosen = Array.from(tracks).find(t => t.language === 'en');
-
-  if (chosen) chosen.mode = 'showing';
-});
   </script>
 </body>
 </html>
-
