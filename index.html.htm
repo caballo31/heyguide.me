@@ -163,81 +163,82 @@
     </div>
   </header>
 
-  <!-- HERO con Mesh Gradient -->
-  <section class="relative mesh-gradient mesh-soft">
-    <div class="mx-auto max-w-7xl px-6 pt-20 md:pt-28 pb-12 grid lg:grid-cols-2 gap-10 items-start">
-      <div class="reveal in">
-        <h1 class="text-5xl md:text-7xl font-semibold leading-[1.05] tracking-tight" data-i18n="hero.headline">
-          Empaqueta lo que sabes y empieza a monetizarlo.
-        </h1>
-        <p class="mt-5 text-lg md:text-xl text-gray-700" data-i18n="hero.sub">
-          ¿Das clases, tours, recetas o compartes contenido? Transforma tu conocimiento en un producto digital simple y véndelo online a cualquier persona, en cualquier lugar.
-        </p>
+ <!-- HERO + BENEFICIOS con un solo mesh continuo -->
+<section class="relative mesh-gradient mesh-soft">
+  <!-- HERO -->
+  <div id="hero" class="mx-auto max-w-7xl px-6 pt-20 md:pt-28 pb-12 grid lg:grid-cols-2 gap-10 items-start">
+    <div class="reveal in">
+      <h1 class="text-5xl md:text-7xl font-semibold leading-[1.05] tracking-tight" data-i18n="hero.headline">
+        Empaqueta lo que sabes y empieza a monetizarlo.
+      </h1>
+      <p class="mt-5 text-lg md:text-xl text-gray-700" data-i18n="hero.sub">
+        ¿Das clases, tours, recetas o compartes contenido? Transforma tu conocimiento en un producto digital simple y véndelo online a cualquier persona, en cualquier lugar.
+      </p>
 
-        <div class="mt-7 flex flex-wrap items-center gap-3">
-          <a href="#" target="_blank" data-join class="btn btn-primary hvr-raise" data-i18n="cta.joinBtn">Unirme</a>
-          <a href="#casos" class="btn btn-secondary hvr-raise">Ver casos reales</a>
-        </div>
-        <p class="mt-2 text-sm text-gray-600" data-i18n="hero.note">Tras enviar, 1 min de cuestionario.</p>
+      <div class="mt-7 flex flex-wrap items-center gap-3">
+        <a href="#" target="_blank" data-join class="btn btn-primary hvr-raise" data-i18n="cta.joinBtn">Unirme</a>
+        <a href="#casos" class="btn btn-secondary hvr-raise">Ver casos reales</a>
       </div>
+      <p class="mt-2 text-sm text-gray-600" data-i18n="hero.note">Tras enviar, 1 min de cuestionario.</p>
+    </div>
 
-      <!-- Cards -->
-      <div class="w-full reveal">
-        <!-- CARD: DEMO / STORY -->
-        <article class="relative w-full overflow-hidden rounded-3xl border border-gray-200 shadow-[0_10px_30px_rgba(0,0,0,.08)] hvr-raise cursor-pointer group"
-                 data-open-demo>
-          <div class="relative w-full aspect-[16/12] sm:aspect-[16/10] md:aspect-[16/9] bg-black">
-            <img src="demo-preview.png?q=80&w=1600&auto=format&fit=crop"
-                 alt="heyGuide demo" class="absolute inset-0 h-full w-full object-cover opacity-90 group-hover:opacity-80 transition">
-            <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent"></div>
+    <!-- LADO DERECHO: demo + 2 cards -->
+    <div class="w-full reveal">
+      <!-- CARD: DEMO / STORY -->
+      <article class="relative w-full overflow-hidden rounded-3xl border border-gray-200 shadow-[0_10px_30px_rgba(0,0,0,.08)] hvr-raise cursor-pointer group"
+               data-open-demo>
+        <div class="relative w-full aspect-[16/12] sm:aspect-[16/10] md:aspect-[16/9] bg-black">
+          <img src="demo-preview.png?q=80&w=1600&auto=format&fit=crop"
+               alt="heyGuide demo" class="absolute inset-0 h-full w-full object-cover opacity-90 group-hover:opacity-80 transition">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent"></div>
 
-            <div class="absolute inset-0 m-auto h-20 w-20 rounded-full bg-white/95 shadow-lg grid place-items-center transition group-hover:scale-105">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="#EF4444" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
-            </div>
-
-            <div class="absolute bottom-0 left-0 right-0 p-5 md:p-6 text-white">
-              <p class="text-[11px] tracking-widest font-semibold opacity-90" data-i18n="demo.badge">Story · 27 s</p>
-              <h3 class="mt-1 text-2xl md:text-3xl font-semibold" data-i18n="demo.title">
-                ¿Qué es heyGuide en 30 segundos?
-              </h3>
-            </div>
+          <div class="absolute inset-0 m-auto h-20 w-20 rounded-full bg-white/95 shadow-lg grid place-items-center transition group-hover:scale-105">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="#EF4444" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
           </div>
-        </article>
 
-        <div class="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-4">
-          <!-- LOCKED 1 -->
-          <a href="#signup" class="group relative rounded-3xl border border-gray-200 bg-white overflow-hidden shadow-[0_6px_18px_rgba(0,0,0,.06)] hvr-raise">
-            <span class="absolute top-3 left-3 z-10 inline-flex items-center gap-1 text-[11px] font-semibold px-2 py-1 rounded-full bg-gray-900/85 text-white backdrop-blur">🔒 Locked</span>
-            <img src="https://cdn.pixabay.com/photo/2014/07/08/19/40/alley-387825_1280.jpg" alt="Street food Napoli" class="h-36 w-full object-cover">
-            <div class="p-4 relative z-10">
-              <div class="flex items-center justify-between">
-                <p class="font-semibold truncate">Street food Napoli</p>
-                <span class="text-accent font-semibold">€5.90</span>
-              </div>
-              <p class="text-sm text-gray-500 mt-1">Gastro · 7 stories</p>
-            </div>
-          </a>
-          <!-- LOCKED 2 -->
-          <a href="#signup" class="group relative rounded-3xl border border-gray-200 bg-white overflow-hidden shadow-[0_6px_18px_rgba(0,0,0,.06)] hvr-raise">
-            <span class="absolute top-3 left-3 z-10 inline-flex items-center gap-1 text-[11px] font-semibold px-2 py-1 rounded-full bg-gray-900/85 text-white backdrop-blur">🔒 Locked</span>
-            <img src="https://images.unsplash.com/photo-1587613865766-c8110e79c7d5?q=80&w=1600&auto=format&fit=crop"
-                 alt="Productividad con apps no-code" class="h-36 w-full object-cover">
-            <div class="p-4 relative z-10">
-              <div class="flex items-center justify-between">
-                <p class="font-semibold truncate">Apps 10× rápido (AI+Bubble)</p>
-                <span class="text-accent font-semibold">€9.90</span>
-              </div>
-              <p class="text-sm text-gray-500 mt-1">Productividad · 6 stories</p>
-            </div>
-          </a>
+          <div class="absolute bottom-0 left-0 right-0 p-5 md:p-6 text-white">
+            <p class="text-[11px] tracking-widest font-semibold opacity-90" data-i18n="demo.badge">Story · 27 s</p>
+            <h3 class="mt-1 text-2xl md:text-3xl font-semibold" data-i18n="demo.title">
+              ¿Qué es heyGuide en 30 segundos?
+            </h3>
+          </div>
         </div>
+      </article>
+
+      <!-- Grid de cards bloqueadas -->
+      <div class="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <!-- LOCKED 1 -->
+        <a href="#signup" class="group relative rounded-3xl border border-gray-200 bg-white overflow-hidden shadow-[0_6px_18px_rgba(0,0,0,.06)] hvr-raise">
+          <span class="absolute top-3 left-3 z-10 inline-flex items-center gap-1 text-[11px] font-semibold px-2 py-1 rounded-full bg-gray-900/85 text-white backdrop-blur">🔒 Locked</span>
+          <img src="https://cdn.pixabay.com/photo/2014/07/08/19/40/alley-387825_1280.jpg" alt="Street food Napoli" class="h-36 w-full object-cover">
+          <div class="p-4 relative z-10">
+            <div class="flex items-center justify-between">
+              <p class="font-semibold truncate">Street food Napoli</p>
+              <span class="text-accent font-semibold">€5.90</span>
+            </div>
+            <p class="text-sm text-gray-500 mt-1">Gastro · 7 stories</p>
+          </div>
+        </a>
+        <!-- LOCKED 2 -->
+        <a href="#signup" class="group relative rounded-3xl border border-gray-200 bg-white overflow-hidden shadow-[0_6px_18px_rgba(0,0,0,.06)] hvr-raise">
+          <span class="absolute top-3 left-3 z-10 inline-flex items-center gap-1 text-[11px] font-semibold px-2 py-1 rounded-full bg-gray-900/85 text-white backdrop-blur">🔒 Locked</span>
+          <img src="https://images.unsplash.com/photo-1587613865766-c8110e79c7d5?q=80&w=1600&auto=format&fit=crop"
+               alt="Productividad con apps no-code" class="h-36 w-full object-cover">
+          <div class="p-4 relative z-10">
+            <div class="flex items-center justify-between">
+              <p class="font-semibold truncate">Apps 10× rápido (AI+Bubble)</p>
+              <span class="text-accent font-semibold">€9.90</span>
+            </div>
+            <p class="text-sm text-gray-500 mt-1">Productividad · 6 stories</p>
+          </div>
+        </a>
       </div>
     </div>
-  </section>
+  </div>
 
-  <!-- Beneficios con mismo bg y SIN emoji en títulos -->
-  <section id="beneficios" class="mesh-gradient mesh-soft reveal">
-    <div class="mx-auto max-w-7xl px-6 py-16 md:py-20">
+  <!-- BENEFICIOS (comparte el mismo background del wrapper) -->
+  <div id="beneficios" class="reveal">
+    <div class="mx-auto max-w-7xl px-6 pb-16 md:pb-20">
       <div class="grid md:grid-cols-3 gap-6">
         <!-- Beneficio 1 -->
         <article class="p-8 rounded-3xl bg-white/85 backdrop-blur border border-white/60 shadow-[0_10px_30px_rgba(0,0,0,.10)] hvr-raise">
@@ -277,7 +278,8 @@
         </article>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
   <!-- Cómo funciona -->
   <section id="funciona" class="bg-white reveal">
@@ -613,3 +615,4 @@
   </script>
 </body>
 </html>
+
