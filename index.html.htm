@@ -58,29 +58,42 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 
-  <!-- Header -->
-  <header class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-200">
-    <div class="mx-auto max-w-7xl px-6 flex items-center justify-between py-4">
-      <a href="#" class="font-semibold tracking-tight">heyGuide</a>
-      <nav class="hidden md:flex items-center gap-8 text-sm">
-        <a href="#beneficios" class="text-gray-600 hover:text-gray-900" data-i18n="nav.benefits">Beneficios</a>
-        <a href="#funciona" class="text-gray-600 hover:text-gray-900" data-i18n="nav.how">Cómo funciona</a>
-        <a href="#signup" class="text-gray-600 hover:text-gray-900" data-i18n="nav.join">Únete</a>
-      </nav>
-      <div class="flex items-center gap-3">
-        <!-- Selector idioma -->
-        <label class="sr-only" for="lang-select">Language</label>
-        <select id="lang-select" class="lang hvr-raise">
-          <option value="es">ES</option>
-          <option value="en">EN</option>
-          <option value="it">IT</option>
-        </select>
-        <a href="#" data-join class="inline-flex items-center rounded-full bg-accent text-white px-4 py-2 text-sm font-semibold hover:opacity-90 hvr-raise" data-i18n="cta.join">
-          Únete a la lista →
-        </a>
-      </div>
+<!-- Header -->
+<header class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-200">
+  <div class="mx-auto max-w-7xl px-6 flex items-center justify-between py-4">
+    <a href="#" class="flex items-center gap-2 font-semibold tracking-tight">
+      <!-- LOGO heyGuide minimal -->
+      <svg viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="w-10 h-10 drop-shadow">
+        <g transform="translate(58,54) rotate(-5,100,70)">
+          <rect x="0" y="40" width="140" height="90" rx="18" fill="#EF4444" opacity="0.20"/>
+          <rect x="10" y="20" width="140" height="90" rx="18" fill="#EF4444" opacity="0.35"/>
+          <rect x="20" y="0"  width="140" height="90" rx="18" fill="#EF4444"/>
+        </g>
+      </svg>
+      <span>heyGuide</span>
+    </a>
+
+    <nav class="hidden md:flex items-center gap-8 text-sm">
+      <a href="#beneficios" class="text-gray-600 hover:text-gray-900" data-i18n="nav.benefits">Beneficios</a>
+      <a href="#funciona" class="text-gray-600 hover:text-gray-900" data-i18n="nav.how">Cómo funciona</a>
+      <a href="#signup" class="text-gray-600 hover:text-gray-900" data-i18n="nav.join">Únete</a>
+    </nav>
+
+    <div class="flex items-center gap-3">
+      <!-- Selector idioma -->
+      <label class="sr-only" for="lang-select">Language</label>
+      <select id="lang-select" class="lang hvr-raise">
+        <option value="es">ES</option>
+        <option value="en">EN</option>
+        <option value="it">IT</option>
+      </select>
+      <a href="#" data-join class="inline-flex items-center rounded-full bg-accent text-white px-4 py-2 text-sm font-semibold hover:opacity-90 hvr-raise" data-i18n="cta.join">
+        Únete a la lista →
+      </a>
     </div>
-  </header>
+  </div>
+</header>
+
 
   <!-- HERO -->
   <section class="relative bg-blur-gradient">
@@ -103,22 +116,29 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
       <div class="w-full reveal">
         <article class="relative w-full overflow-hidden rounded-3xl border border-gray-200 shadow-[0_10px_30px_rgba(0,0,0,.08)] hvr-raise">
-          <div class="relative w-full aspect-[16/12] sm:aspect-[16/10] md:aspect-[16/9]">
-            <img src="https://images.unsplash.com/photo-1528909514045-2fa4ac7a08ba?q=80&w=2000&auto=format&fit=crop" alt="Classic Rome" class="absolute inset-0 h-full w-full object-cover"/>
-            <div class="pointer-events-none absolute inset-0 bg-[linear-gradient(to_top,rgba(0,0,0,.55),rgba(0,0,0,.15),transparent_55%)]"></div>
-            <div class="absolute bottom-0 left-0 right-0 p-5 md:p-6 text-white">
-              <p class="text-[11px] tracking-widest font-semibold opacity-90">SUPER COLLECTION</p>
-              <h3 class="mt-1 text-2xl md:text-3xl font-semibold">Classic Rome</h3>
-              <p class="mt-1 text-sm md:text-base opacity-90 flex items-center gap-3">
-                <span>📚 7 stories</span><span>🔓 Acceso total</span>
-              </p>
-            </div>
-          </div>
-        </article>
+  <div class="relative w-full aspect-[16/12] sm:aspect-[16/10] md:aspect-[16/9]">
+    <img src="https://cdn.pixabay.com/photo/2025/03/31/21/30/italy-9505450_1280.jpg" 
+         alt="Classic Rome" 
+         class="absolute inset-0 h-full w-full object-cover"/>
+
+    <!-- Degradado para legibilidad -->
+    <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-transparent"></div>
+
+    <div class="absolute bottom-0 left-0 right-0 p-5 md:p-6 text-white">
+      <p class="text-[11px] tracking-widest font-semibold opacity-90">SUPER COLLECTION</p>
+      <h3 class="mt-1 text-2xl md:text-3xl font-semibold">Classic Rome</h3>
+      <p class="mt-1 text-sm md:text-base opacity-90 flex items-center gap-3">
+        <span>📚 7 stories</span><span>🔓 Acceso total</span>
+      </p>
+    </div>
+  </div>
+</article>
+
 
         <div class="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-4">
           <a href="#signup" class="rounded-2xl border border-gray-200 bg-white overflow-hidden shadow-[0_6px_18px_rgba(0,0,0,.06)] hvr-raise">
-            <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=1600&auto=format&fit=crop" alt="Street food Napoli" class="h-36 w-full object-cover">
+            <!-- Reemplazo Napoli -->
+            <img src="https://cdn.pixabay.com/photo/2014/07/08/19/40/alley-387825_1280.jpg" alt="Street food Napoli" class="h-36 w-full object-cover">
             <div class="p-4">
               <div class="flex items-center justify-between">
                 <p class="font-semibold truncate">Street food Napoli</p>
@@ -129,7 +149,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           </a>
 
           <a href="#signup" class="rounded-2xl border border-gray-200 bg-white overflow-hidden shadow-[0_6px_18px_rgba(0,0,0,.06)] hvr-raise">
-            <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=1600&auto=format&fit=crop" alt="Apps 10× rápido (AI+Bubble)" class="h-36 w-full object-cover">
+            <!-- Reemplazo 10× (AI+Bubble) -->
+            <img src="https://cdn.pixabay.com/photo/2016/10/13/16/26/web-agency-1738168_1280.jpg" alt="Apps 10× rápido (AI+Bubble)" class="h-36 w-full object-cover">
             <div class="p-4">
               <div class="flex items-center justify-between">
                 <p class="font-semibold truncate">Apps 10× rápido (AI+Bubble)</p>
