@@ -237,6 +237,8 @@
   <source src="Demo.mp4" type="video/mp4">
   <!-- Subtítulos: SOLO si están en el MISMO dominio o con CORS abierto -->
   <track kind="captions" src="demo_en.vtt" srclang="en" label="English" default>
+  <track kind="captions" src="demo_es.vtt" srclang="es" label="Español">
+  <track kind="captions" src="demo_it.vtt" srclang="it" label="Italiano">
 
 </video>
 
@@ -420,6 +422,22 @@
     document.getElementById('demo-close').addEventListener('click',closeDemo);
     demoModal.addEventListener('click',(e)=>{ if(e.target===demoModal) closeDemo(); });
     demoVideo.addEventListener('ended',()=>{ window.dataLayer.push({event:'demo_ended'}); });
+
+    demoVideo.addEventListener('loadedmetadata', () => {
+  const pageLang = (document.documentElement.lang || 'en').slice(0,2).toLowerCase();
+  const tracks = demoVideo.textTracks; // lista de TextTrack
+  if (!tracks || !tracks.length) return;
+
+  // Oculta todas
+  for (let i = 0; i < tracks.length; i++) tracks[i].mode = 'hidden';
+
+  // Activa la pista que coincida con lang (es/it/en). Fallback: en
+  let chosen = Array.from(tracks).find(t => t.language === pageLang);
+  if (!chosen) chosen = Array.from(tracks).find(t => t.language === 'en');
+
+  if (chosen) chosen.mode = 'showing';
+});
   </script>
 </body>
 </html>
+
