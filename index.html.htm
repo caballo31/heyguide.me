@@ -1,6 +1,13 @@
 <!DOCTYPE html>
 <html lang="es" class="scroll-smooth">
 <head>
+  <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-T7WGJK95');</script>
+<!-- End Google Tag Manager -->
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <title>heyGuide · Únete como creador</title>
@@ -45,6 +52,11 @@
   </script>
 </head>
 <body class="bg-white text-gray-900 selection:bg-accent/10 selection:text-gray-900">
+
+  <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T7WGJK95"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
 
   <!-- Header -->
   <header class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-200">
@@ -355,7 +367,22 @@
     document.getElementById('y').textContent = new Date().getFullYear();
     const initial = detectLang();
     setLang(initial);
+    // --- Tracking de clicks en CTAs de join
+window.dataLayer = window.dataLayer || [];
+document.querySelectorAll('[data-join]').forEach(el=>{
+  el.addEventListener('click', ()=>{
+    window.dataLayer.push({
+      event: 'join_click',
+      button_text: (el.textContent || '').trim(),
+      lang: document.documentElement.getAttribute('lang') || 'en',
+      page_location: location.href,
+      link_url: el.getAttribute('href') || ''
+    });
+  }, { once:false });
+});
+
   </script>
 </body>
 </html>
+
 
